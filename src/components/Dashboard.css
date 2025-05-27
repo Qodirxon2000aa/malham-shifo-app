@@ -294,6 +294,30 @@
   padding: 2rem;
 }
 
+.order-datetime {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.order-time {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.order-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.order-price {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
 /* Mobile-specific adjustments */
 @media (max-width: 480px) {
   .patient-card, .orders-section, .stats-section {

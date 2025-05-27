@@ -265,18 +265,31 @@ function Dashboard() {
                   <span className="order-service">
                     {order.services[0]?.name || 'Nomsiz xizmat'}
                   </span>
-                  <span className="order-date">
-                    {new Date(order.date).toLocaleDateString('uz-UZ')}
-                  </span>
+                  <div className="order-datetime">
+                    <span className="order-date">
+                      {new Date(order.date).toLocaleDateString('uz-UZ')}
+                    </span>
+                    <span className="order-time">
+                      {new Date(order.date).toLocaleTimeString('uz-UZ', { 
+                        hour: '2-digit', 
+                        minute: '2-digit' 
+                      })}
+                    </span>
+                  </div>
                 </div>
-                <div className={`order-status ${order.status?.toLowerCase() || 'pending'}`}>
-                  {order.status || 'TUGATILDI'}
+                <div className="order-details">
+                  <div className={`order-status ${order.status?.toLowerCase() || 'pending'}`}>
+                    {order.status || 'TUGATILDI'}
+                  </div>
+                  <div className="order-price">
+                    {order.services[0]?.price?.toLocaleString('uz-UZ') || 0} so'm
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         ) : (
-          <div className="no-orders">Tanlangan vaqt oralig‘ida buyurtmalar mavjud emas</div>
+          <div className="no-orders">Tanlangan vaqt oralig'ida buyurtmalar mavjud emas</div>
         )}
       </div>
     </div>
