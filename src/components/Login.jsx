@@ -25,7 +25,7 @@ function Login() {
         localStorage.setItem('userData', JSON.stringify(employee));
         localStorage.setItem('isLoggedIn', 'true');
         toast.success('Kirildi!');
-        setTimeout(() => navigate('/dashboard'), 1000); // Delay for toast visibility
+        setTimeout(() => navigate('/dashboard'), 1000);
       } else {
         toast.error('Xato parol yoki Login!');
       }
@@ -46,16 +46,18 @@ function Login() {
     <div className="login-mobile">
       <Toaster />
       
-      <div className="login-header">
-        <h1>MALHAM SHIFO</h1>
-      </div>
+     
       
       <div className="login-container">
         <form onSubmit={handleSubmit} className="login-form">
-          <div className="welcome-message">Ishchilar uchun maxsus dastur</div>
-          
+          <div className="welcome-message">Ishchilar uchun maxsus dastur.</div>
+          <div className="lop">
           <div className="logo-container">
-            <div className="logo">MSH</div> {/* Initials for Malham Shifo */}
+            <div className="logo">MSH</div>
+            
+          </div>
+          <h2>MalhamShifo Clinic</h2>
+          
           </div>
           
           <div className="form-group">
