@@ -24,7 +24,7 @@ function Login() {
       if (employee) {
         localStorage.setItem('userData', JSON.stringify(employee));
         localStorage.setItem('isLoggedIn', 'true');
-        toast.success('Kirildi');
+        toast.success('Kirildi!');
         setTimeout(() => navigate('/dashboard'), 1000); // Delay for toast visibility
       } else {
         toast.error('Invalid username or password');
@@ -39,7 +39,7 @@ function Login() {
 
   const handleForgotPassword = (e) => {
     e.preventDefault();
-    toast.info('Please contact the clinic administrator to reset your password.');
+    toast.info('Parolni tiklash uchun klinika mamuriga murojaat qiling.');
   };
 
   return (
@@ -71,7 +71,7 @@ function Login() {
           </div>
           
           <div className="form-group">
-            <label htmlFor="password">Parol</label>
+            <label htmlFor="password">Password</label>
             <input
               id="password"
               type="password"
@@ -82,7 +82,9 @@ function Login() {
             />
           </div>
           
-        
+          <div className="forgot-password">
+            <a href="#" onClick={handleForgotPassword}>Forgot Password?</a>
+          </div>
           
           <button type="submit" className="login-button" disabled={loading}>
             {loading && <span className="spinner"></span>}
