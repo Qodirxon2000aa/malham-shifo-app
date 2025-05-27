@@ -1,0 +1,226 @@
+/* Root variables for consistent theming */
+:root {
+  --primary-color: #2ecc71; /* Clinic green */
+  --secondary-color: #27ae60;
+  --background-light: #f8fafc;
+  --text-dark: #1a202c;
+  --text-light: #6b7280;
+  --toaster-success: #10b981;
+  --toaster-error: #ef4444;
+}
+
+.login-mobile {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--background-light) 0%, #e6f3ea 100%); /* Subtle gradient */
+  display: flex;
+  flex-direction: column;
+}
+
+.login-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.login-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 64px);
+}
+
+.login-form {
+  background: white;
+  width: 100%;
+  max-width: 360px; /* Slightly wider for better spacing */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-message {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Subtle hover animation */
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.forgot-password a {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.login-button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.login-button:active {
+  background-color: var(--secondary-color);
+  transform: translateY(0);
+}
+
+.login-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.spinner {
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Toaster styles */
+[data-sonner-toaster] {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+[data-sonner-toast] {
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-sonner-toast][data-type="success"] {
+  background-color: var(--toaster-success);
+  color: white;
+}
+
+[data-sonner-toast][data-type="error"] {
+  background-color: var(--toaster-error);
+  color: white;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+  .login-form {
+    box-shadow: none;
+    background: transparent;
+    padding: 1rem;
+  }
+  
+  .form-group input {
+    background: white;
+  }
+
+  .login-header h1 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Subtle background pattern for clinic theme */
+.login-mobile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path fill="%232ecc71" fill-opacity="0.05" d="M20 5a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6zm10 10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h6z"/></svg>') repeat;
+  z-index: -1;
+}

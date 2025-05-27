@@ -1,0 +1,337 @@
+/* Root variables for consistent theming */
+:root {
+  --primary-color: #2ecc71; /* Klinika yashil */
+  --secondary-color: #27ae60;
+  --background-light: #f8fafc;
+  --text-dark: #1a202c;
+  --text-light: #6b7280;
+  --status-pending: #f59e0b;
+  --status-completed: #10b981;
+  --active-button: #219653;
+}
+
+.dashboard-mobile {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--background-light) 0%, #e6f3ea 100%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Header */
+.header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-button, .logout-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover, .logout-button:hover {
+  transform: scale(1.1);
+}
+
+.header h1 {
+  font-size: 1.3rem;
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Stats Section */
+.stats-section {
+  background: white;
+  margin: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.stat-card {
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* Patient Card */
+.patient-card {
+  background: white;
+  margin: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.patient-image {
+  display: flex;
+  justify-content: center;
+}
+
+.rasm-box {
+  width: 120px;
+  height: 120px;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.rasm-box:hover {
+  transform: scale(1.05);
+}
+
+.rasm-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rasm-box div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.patient-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--text-dark);
+  min-width: 100px;
+}
+
+.info-value {
+  color: var(--text-dark);
+}
+
+.edit-profile {
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.edit-profile a {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.edit-profile a:hover {
+  text-decoration: underline;
+}
+
+/* Orders Section */
+.section-title {
+  background: #e2e8f0;
+  padding: 0.8rem 1.5rem;
+  margin: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.orders-section {
+  background: white;
+  margin: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.filter-button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.filter-button.active {
+  background-color: var(--active-button);
+}
+
+.date-filter, .month-filter {
+  padding: 0.6rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  outline: none;
+  background: white;
+}
+
+.date-filter:focus, .month-filter:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.order-item {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.order-item:hover {
+  transform: translateY(-2px);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.order-service {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.order-date {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.order-status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.order-status.pending {
+  background-color: var(--status-pending);
+  color: white;
+}
+
+.order-status.completed {
+  background-color: var(--status-completed);
+  color: white;
+}
+
+.no-orders {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  padding: 2rem;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+  .patient-card, .orders-section, .stats-section {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.1rem;
+  }
+
+  .rasm-box {
+    width: 100px;
+    height: 100px;
+  }
+
+  .stat-card {
+    padding: 0.8rem;
+  }
+
+  .filter-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-button, .date-filter, .month-filter {
+    width: 100%;
+  }
+}
+
+/* Subtle background pattern */
+.dashboard-mobile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path fill="%232ecc71" fill-opacity="0.05" d="M20 5a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6zm10 10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h6z"/></svg>') repeat;
+  z-index: -1;
+}
