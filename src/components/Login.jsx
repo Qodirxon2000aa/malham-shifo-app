@@ -27,7 +27,7 @@ function Login() {
         toast.success('Kirildi!');
         setTimeout(() => navigate('/dashboard'), 1000); // Delay for toast visibility
       } else {
-        toast.error('Invalid username or password');
+        toast.error('Xato parol yoki Login!');
       }
     } catch (error) {
       console.error('Login error:', error);
