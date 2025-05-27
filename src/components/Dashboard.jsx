@@ -116,7 +116,7 @@ function Dashboard() {
   };
 
   const handleEditProfile = () => {
-    toast.info('Profilni tahrirlash uchun ruxsat mumkin emas. Administrator bilan bog\'laning.');
+    toast.info('Profilni tahrirlash uchun ruxsat yo\'q. Administrator bilan bog\'laning.');
   };
 
   const handleDateChange = (e) => {
