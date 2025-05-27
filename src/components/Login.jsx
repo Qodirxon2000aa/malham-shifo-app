@@ -24,7 +24,7 @@ function Login() {
       if (employee) {
         localStorage.setItem('userData', JSON.stringify(employee));
         localStorage.setItem('isLoggedIn', 'true');
-        toast.success('Login successful!');
+        toast.success('Kirildi');
         setTimeout(() => navigate('/dashboard'), 1000); // Delay for toast visibility
       } else {
         toast.error('Invalid username or password');
