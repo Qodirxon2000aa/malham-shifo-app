@@ -83,7 +83,7 @@ function Login() {
           </div>
           
           <div className="forgot-password">
-            <a href="#" onClick={handleForgotPassword}>Forgot Password?</a>
+            <a href="#" onClick={handleForgotPassword}>Parol esdan chiqdimi?</a>
           </div>
           
           <button type="submit" className="login-button" disabled={loading}>
